@@ -1,6 +1,8 @@
-ablation,combined_stress_mean_success,ci95_success,interpretation
-full_proposed_branch_mechanism,0.6652,0.0113,all components
-minus_branch_atlas,0.5600,0.0136,removes explicit unrealized futures
-minus_tail_risk_objective,0.5724,0.0228,uses mean predicted value only
-minus_diagnostic_probe,0.6119,0.0195,does not actively test ambiguous physical modes
-minus_failure_memory,0.6000,0.0142,does not reuse repaired beliefs
+ablation,interpretation,mean_mean_success_rate,ci95_mean_success_rate,groups
+full_intervention_violation_revision,all components,0.728877,0.003167,7
+minus_cost_aware_querying,does not price interventions,0.663897,0.003274,7
+minus_causal_consistency_check,removes causal consistency check,0.654845,0.005932,7
+minus_recovery_memory,does not reuse intervention outcomes,0.647280,0.007246,7
+minus_intervention_gate,updates without intervention gate,0.630332,0.007835,7
+minus_violation_classifier,removes physical-violation classifier,0.623801,0.006268,7
+uncertainty_only_trigger,uses uncertainty without violation evidence,0.577050,0.004967,7

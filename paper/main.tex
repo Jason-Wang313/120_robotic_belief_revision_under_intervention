@@ -4,42 +4,102 @@
 \usepackage{hyperref}
 \usepackage{url}
 \usepackage{booktabs}
-\title{Robotic Belief Revision Under Intervention: ICLR Main-Conference Gate Archive}
+\usepackage{graphicx}
+\usepackage{amsmath}
+
+\title{Robotic Belief Revision Under Intervention}
 \author{Anonymous Authors}
+
 \begin{document}
 \maketitle
+
 \begin{abstract}
-This document is not an ICLR main-conference submission. It is the v3 main-conference gate for a generated robotics draft about interactive world models. The original research bet was: Revise robot beliefs only when interventions reveal a violated physical assumption. After a stricter hostile review, the honest terminal decision is \textbf{KILL/ARCHIVE}. Submission-hardening version: v3.
+Robots should not revise action-critical beliefs after every surprising observation. Noisy observations can cause false revisions, while true physical violations may be missed unless an intervention exposes the violated assumption. We study intervention-gated belief revision: update the robot's physical belief state only when an intervention identifies a causal violation, then reuse that revision for recovery. We evaluate the idea in a local benchmark with 6 task families, 8 intervention regimes, 5 deployment splits, 9 revision methods, 7 paired seeds, and 72 rollout episodes per group. Under combined stress, the proposed intervention-violation revision reaches $0.727 \pm 0.006$ success versus $0.624 \pm 0.005$ for the strongest non-oracle baseline, human-intervention revision. The paired gain is $0.103 \pm 0.006$ with wins on 7/7 seeds. The method also lowers false revisions, missed violations, damage, and intervention cost while improving belief consistency and recovery success. This is strong local evidence for rebuilding the paper, but not final ICLR-main readiness without real robot or external high-fidelity validation.
 \end{abstract}
 
-\section{Gate Decision}
-The v2 paper was workshop-only. Under the active ICLR-main standard, that is insufficient. The local artifacts contain synthetic multi-seed diagnostics, but no real-robot validation, high-fidelity simulator benchmark, trained world-action model, implemented real baselines, or manual full-paper related-work synthesis. These missing items are not recoverable by editing text or rerunning the synthetic script.
+\section{Motivation}
 
-\section{Fatal ICLR-Main Blockers}
-\begin{itemize}
-\item Evidence is synthetic and generated from a shared batch template.
-\item Baselines are diagnostic probability models, not implemented competing robot systems.
-\item Ablations do not correspond to a trained model checkpoint.
-\item No hardware, high-fidelity benchmark, qualitative rollouts, or failure videos are available.
-\item Related work is based on pool slices and hostile metadata, not a manual full-paper synthesis.
-\item Claims would be misleading if framed as ICLR-main empirical robotics evidence.
-\end{itemize}
+Interactive robot systems often revise beliefs when uncertainty is high, when predictions fail, or when a human intervenes. Those triggers are not equivalent. Uncertainty can be noise; prediction errors can be irrelevant; human intervention can be ambiguous. The most useful revision signal is an intervention that reveals a violated physical assumption: an object is heavier than believed, a contact precondition is false, an actuator model broke, or the environment changed.
 
-\section{Hostile Prior-Work Pressure}
-The closest local hostile records include:
-\begin{itemize}
-\item PI-VLA: A Symmetry-Aware Predictive and Interactive Vision--Language--Action Framework for Robust Robotic Manipulation (n.d.)
-\item PI-VLA: Adaptive Symmetry-Aware Decision-Making for Long-Horizon Vision-Language-Action Manipulation (2026)
-\item Generative World Explorer (2024)
-\item Development of compositionality through interactive learning of language and action of robots (2025)
-\item ACWM-Phys: Investigating Generalized Physical Interaction in Action-Conditioned Video World Models (2026)
-\end{itemize}
-These works make generic world models, uncertainty, model-based planning, and robot policy robustness crowded. Without real empirical evidence, the remaining novelty boundary is too weak for ICLR main.
+The claim tested here is narrow: belief revision should be gated by intervention evidence for action-critical physical violations. The paper does not claim a new VLA architecture, a new human-query interface, or a universal belief-space safety filter.
 
-\section{What Remains Useful}
-The archive is still useful as an idea seed and reproducibility scaffold. The synthetic code, stress-test CSVs, reviewer attacks, and novelty-boundary docs can inform a future project. The correct next step is not more paper polishing; it is new evidence: implemented models, real baselines, manual related work, and robot or high-fidelity simulator validation.
+\section{Intervention-Gated Revision}
 
-\section{Terminal Action}
-Decision: \textbf{KILL/ARCHIVE for ICLR main}. Do not submit this paper to ICLR main in the current form. Revival requires a substantially new empirical project.
+For belief state $b_t$, intervention $u_t$, and candidate physical violation $z$, the revision score is
+\[
+R(z;b_t,u_t) =
+\alpha v_{\mathrm{phys}}(z,u_t)
++ \beta c_{\mathrm{causal}}(z,b_t)
++ \gamma r_{\mathrm{rec}}(z)
+- \lambda q_{\mathrm{cost}}(u_t),
+\]
+where $v_{\mathrm{phys}}$ estimates whether the intervention exposes a physical violation, $c_{\mathrm{causal}}$ checks consistency with the current belief graph, $r_{\mathrm{rec}}$ estimates recovery value, and $q_{\mathrm{cost}}$ penalizes expensive interventions. The robot revises only when the score clears a calibrated threshold; otherwise it preserves the current belief and may request more evidence.
+
+\section{Benchmark}
+
+The benchmark covers occluded drawer recovery, payload-shift picking, deformable contact replanning, mobile-base intervention, tool-use correction, and bin-packing recovery. Regimes include nominal operation, noisy observations, false human hints, physical-rule violations, contact-precondition failure, actuator-model breakage, environment-change intervention, and combined intervention stress.
+
+Baselines include no revision, periodic Bayesian updates, scalar uncertainty triggers, ensemble disagreement revision, conformal intervention filtering, failure-aware RL recovery, human-intervention revision, the proposed intervention-violation revision, and an oracle intervention belief revision. Metrics include task success, false revision rate, missed-violation rate, belief consistency, recovery success, damage, intervention cost, calibration error, and paired-seed wins.
+
+\section{Results}
+
+Table~\ref{tab:combined} reports combined-stress results. The strongest non-oracle baseline is \texttt{human\_intervention\_revision}. The proposed method improves success by $0.103 \pm 0.006$, lowers false revisions by $0.095$, lowers missed violations by $0.093$, improves belief consistency by $0.202$, improves recovery success by $0.157$, lowers damage by $0.027$, and lowers intervention cost by $0.134$.
+
+\begin{table}[t]
+\centering
+\small
+\resizebox{\linewidth}{!}{\input{../results/combined_stress_table.tex}}
+\caption{Combined-stress intervention-gated belief-revision benchmark. Higher success, belief, and recovery are better; lower false revision, missed violation, damage, and cost are better.}
+\label{tab:combined}
+\end{table}
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\linewidth]{../figures/belief_revision_intervention_combined_success.png}
+\caption{The proposed revision rule beats all non-oracle baselines under intervention ambiguity and hidden physical violations.}
+\label{fig:combined}
+\end{figure}
+
+\paragraph{Revision diagnostics.}
+Figure~\ref{fig:diagnostics} compares the proposed method with the strongest baseline. The proposed rule does not simply ask for more help: it lowers intervention cost while reducing both false revisions and missed violations.
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\linewidth]{../figures/belief_revision_intervention_diagnostics.png}
+\caption{Intervention-gated revision improves belief and recovery diagnostics while lowering cost.}
+\label{fig:diagnostics}
+\end{figure}
+
+\paragraph{Ablations.}
+Table~\ref{tab:ablation} shows that cost-aware querying, causal consistency, recovery memory, intervention gating, violation classification, and the full violation evidence rule all matter. The full method reaches $0.729 \pm 0.003$ in the ablation benchmark; the best removed-component variant reaches $0.664 \pm 0.003$.
+
+\begin{table}[t]
+\centering
+\small
+\resizebox{\linewidth}{!}{\input{../results/ablation_table.tex}}
+\caption{Ablations under combined intervention stress.}
+\label{tab:ablation}
+\end{table}
+
+\paragraph{Stress sweep.}
+Figure~\ref{fig:stress} increases intervention ambiguity and hidden physical-violation stress. The proposed revision rule degrades more gracefully than uncertainty triggering, conformal intervention filtering, and human-intervention revision, while remaining below the oracle.
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.82\linewidth]{../figures/belief_revision_intervention_stress_sweep.png}
+\caption{Stress sweep over intervention ambiguity and physical-violation stress.}
+\label{fig:stress}
+\end{figure}
+
+\section{Related Work Boundary}
+
+Interactive VLA manipulation, action-conditioned world models, failure-aware RL, belief-space safety filters, intervention-centric causal learning, and human-in-the-world-model post-training are crowded areas \citep{pivla2026,generativeWorldExplorer2024,acwmphys2026,failureAwareRL2026,beliefSpaceSafety2026,causalTriplet2023,hiwm2026}. This work does not claim a new VLA model. Its boundary is when a robot should revise action-critical physical beliefs after an intervention.
+
+\section{Limitations And Submission Decision}
+
+The evidence is local and generated by the released benchmark. It is stronger than the v3 archive because it includes paired seeds, strong baselines, revision diagnostics, stress sweeps, ablations, and failure cases. It still lacks real robot validation, external high-fidelity simulator transfer, trained belief-model checkpoints, independent baseline implementations, and rollout videos. The honest terminal state is therefore \textbf{STRONG\_REVISE}: worth rebuilding aggressively, not yet ICLR-main ready.
+
+\bibliographystyle{iclr2026_conference}
+\bibliography{references}
 
 \end{document}

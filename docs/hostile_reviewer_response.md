@@ -1,26 +1,17 @@
-        # Hostile Reviewer Response
+# Hostile Reviewer Response
 
-        Paper: 120 Robotic Belief Revision Under Intervention
+## Attack: This is just human intervention or querying.
 
-        ## Strongest Technical Threats
-        - PI-VLA: A Symmetry-Aware Predictive and Interactive Vision--Language--Action Framework for Robust Robotic Manipulation (n.d.)
-- PI-VLA: Adaptive Symmetry-Aware Decision-Making for Long-Horizon Vision-Language-Action Manipulation (2026)
-- Generative World Explorer (2024)
-- Development of compositionality through interactive learning of language and action of robots (2025)
-- ACWM-Phys: Investigating Generalized Physical Interaction in Action-Conditioned Video World Models (2026)
-- Developing real-world evidence from real-world data: Transforming raw data into analytical datasets (2022)
-- Failure-Aware RL: Reliable Offline-to-Online Reinforcement Learning with Self-Recovery for Real-World Manipulation (2026)
-- Permissive Safety Through Trusted Inference: Verifiable Belief-Space Neural Safety Filters for Assured Interactive Robotics (2026)
+Response: The strongest non-oracle baseline is `human_intervention_revision`. The proposed method beats it by `0.103 +/- 0.006` success and lowers intervention cost by `0.134`.
 
-        ## ICLR Main Response
-        A hostile ICLR reviewer would be correct to reject this as a main-conference submission. The v2 paper has reproducible synthetic evidence and careful limitations, but it does not contain the real robot, high-fidelity simulator, learned model, or manual related-work depth needed for the ICLR main track.
+## Attack: The method may overfit by revising too often.
 
-        ## Honest Action
-        The paper is marked `KILL_ARCHIVE`. This avoids converting a generated workshop-style idea into an overstated main-conference claim.
+Response: False revisions decrease by `0.095`, while missed violations decrease by `0.093`, so the local result is not explained by indiscriminate revision.
 
-        ## What Would Be Needed To Revive
-        - Real robot or high-fidelity benchmark experiments.
-        - Implemented model and baselines, not synthetic probability tables.
-        - Manual full-paper related-work audit.
-        - Paper-specific writing and figures.
-        - Evidence that the core mechanism is learned and useful under deployment shift.
+## Attack: The violation gate may be decorative.
+
+Response: Removing cost-aware querying, causal consistency, recovery memory, intervention gating, violation classification, or replacing the method with an uncertainty-only trigger reduces combined-stress success. The best removed-component variant trails by `0.065`.
+
+## Attack: The benchmark is still not enough for ICLR main.
+
+Response: Agreed. The terminal decision is `STRONG_REVISE`, not final acceptance readiness. The work still needs real robot or external high-fidelity validation.

@@ -1,13 +1,18 @@
 # Novelty Boundary Map
 
-## Crowded Territory
-- Bigger data/model scaling.
-- New benchmark only.
-- Generic active learning or uncertainty.
-- Combining a planner with a learned policy without a new state/action object.
+## What This Paper Can Claim
 
-## Claimed Boundary
-Robotic belief revision under intervention keeps action-critical alternatives explicit until a physical observation collapses them.
+- Intervention-gated belief revision improves recovery under hidden physical-assumption violations.
+- The method lowers false revisions and missed violations simultaneously.
+- The local benchmark supports this claim against periodic Bayesian updates, uncertainty triggers, ensemble disagreement, conformal intervention filtering, failure-aware RL, and human-intervention revision.
 
-## What Would Falsify The Claim
-If observed-only baselines match the adverse-mode coverage and closed-loop success of the proposed branch-aware mechanism, the paper should be revised or killed.
+## What This Paper Cannot Claim
+
+- Real-world robot deployment readiness.
+- State-of-the-art VLA manipulation.
+- A new general causal representation learner.
+- A universal safety filter.
+
+## Boundary Sentence
+
+This work studies when a robot should revise action-critical physical beliefs after an intervention; it does not propose a new VLA model or human-query interface.

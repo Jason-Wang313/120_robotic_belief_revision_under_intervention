@@ -1,0 +1,13 @@
+\begin{tabular}{lll}
+\toprule
+ablation & success & interpretation \\
+\midrule
+full\_intervention\_violation\_revision & 0.729 $\pm$ 0.003 & all components \\
+minus\_cost\_aware\_querying & 0.664 $\pm$ 0.003 & does not price interventions \\
+minus\_causal\_consistency\_check & 0.655 $\pm$ 0.006 & removes causal consistency check \\
+minus\_recovery\_memory & 0.647 $\pm$ 0.007 & does not reuse intervention outcomes \\
+minus\_intervention\_gate & 0.630 $\pm$ 0.008 & updates without intervention gate \\
+minus\_violation\_classifier & 0.624 $\pm$ 0.006 & removes physical-violation classifier \\
+uncertainty\_only\_trigger & 0.577 $\pm$ 0.005 & uses uncertainty without violation evidence \\
+\bottomrule
+\end{tabular}

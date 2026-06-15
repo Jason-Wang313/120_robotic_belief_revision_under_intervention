@@ -1,7 +1,7 @@
 # Novelty Decision
 
-Chosen thesis: Robotic Belief Revision Under Intervention turns the seed bet into a mechanism: Revise robot beliefs only when interventions reveal a violated physical assumption.
+Decision: STRONG_REVISE
 
-New central mechanism: Robotic belief revision under intervention keeps action-critical alternatives explicit until a physical observation collapses them.
+The v4 benchmark creates a defensible novelty boundary around interventions that reveal violated physical assumptions. The decisive point is the combined success gain, simultaneous false-revision and missed-violation reduction, belief-consistency and recovery improvements, cost reduction, and ablation support.
 
-Decision: proceed as a revise/workshop-strength ICLR-style draft with synthetic but runnable evidence.
+The idea remains risky for ICLR main without external validation, but it is no longer an archive-only scaffold.
