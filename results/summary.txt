@@ -1,16 +1,35 @@
-Submission-hardening experiment for paper 120 robotic_belief_revision_under_intervention
-Seven seeds, 600 episodes per seed, strong baselines, ablations, stress sweep, and negative cases.
-observed_only_behavior_clone hidden_mode_shift mean_success=0.4107 ci95=0.0183 tail=0.5893
-observed_only_behavior_clone combined_stress mean_success=0.3333 ci95=0.0088 tail=0.6667
-data_augmentation_wam hidden_mode_shift mean_success=0.5041 ci95=0.0195 tail=0.4959
-data_augmentation_wam combined_stress mean_success=0.4193 ci95=0.0097 tail=0.5807
-scalar_uncertainty_planner hidden_mode_shift mean_success=0.5650 ci95=0.0126 tail=0.4350
-scalar_uncertainty_planner combined_stress mean_success=0.4900 ci95=0.0172 tail=0.5100
-ensemble_disagreement_planner hidden_mode_shift mean_success=0.5876 ci95=0.0174 tail=0.4124
-ensemble_disagreement_planner combined_stress mean_success=0.5483 ci95=0.0170 tail=0.4517
-conformal_risk_filter hidden_mode_shift mean_success=0.6193 ci95=0.0144 tail=0.3807
-conformal_risk_filter combined_stress mean_success=0.5712 ci95=0.0128 tail=0.4288
-proposed_branch_mechanism hidden_mode_shift mean_success=0.6881 ci95=0.0182 tail=0.3119
-proposed_branch_mechanism combined_stress mean_success=0.6614 ci95=0.0209 tail=0.3386
-oracle_branch_upper_bound hidden_mode_shift mean_success=0.7621 ci95=0.0176 tail=0.2379
-oracle_branch_upper_bound combined_stress mean_success=0.7426 ci95=0.0178 tail=0.2574
+Paper 120 robotic belief revision under intervention local evidence rebuild
+Design: 6 task families x 8 intervention regimes x 5 deployment splits x 9 methods, 7 seeds, 72 rollout episodes per group.
+Terminal decision: STRONG_REVISE
+Strongest non-oracle baseline under combined stress: human_intervention_revision
+Proposed combined-stress success: 0.727 +/- 0.006
+Strongest baseline combined-stress success: 0.624 +/- 0.005
+Pairwise proposed-minus-strongest success diff: 0.103 +/- 0.006; wins=7/7
+False-revision delta: -0.095
+Missed-violation delta: -0.093
+Belief-consistency delta: 0.202
+Recovery-success delta: 0.157
+Damage-rate delta: -0.027
+Intervention-cost delta: -0.134
+Ablation margin over best removed component (minus_cost_aware_querying): 0.065
+Gate results:
+- success_margin_ge_0.030: True
+- false_revision_delta_le_-0.020: True
+- missed_violation_delta_le_-0.020: True
+- belief_consistency_delta_ge_0.030: True
+- recovery_success_delta_ge_0.030: True
+- damage_delta_le_-0.010: True
+- intervention_cost_delta_le_0: True
+- paired_seed_wins_ge_5: True
+- ablation_margin_ge_0.020: True
+
+Combined-stress ranking:
+- oracle_intervention_belief_revision: success=0.825 +/- 0.003; false=0.066; missed=0.061; belief=0.847; recovery=0.811; damage=0.039; cost=0.209
+- proposed_intervention_violation_revision: success=0.727 +/- 0.006; false=0.126; missed=0.117; belief=0.713; recovery=0.684; damage=0.059; cost=0.259
+- human_intervention_revision: success=0.624 +/- 0.005; false=0.221; missed=0.210; belief=0.511; recovery=0.527; damage=0.086; cost=0.393
+- failure_aware_rl_recovery: success=0.575 +/- 0.007; false=0.234; missed=0.253; belief=0.472; recovery=0.489; damage=0.096; cost=0.300
+- conformal_intervention_filter: success=0.548 +/- 0.004; false=0.227; missed=0.277; belief=0.453; recovery=0.427; damage=0.100; cost=0.249
+- ensemble_disagreement_revision: success=0.518 +/- 0.005; false=0.248; missed=0.296; belief=0.422; recovery=0.402; damage=0.108; cost=0.221
+- scalar_uncertainty_trigger: success=0.475 +/- 0.006; false=0.268; missed=0.321; belief=0.377; recovery=0.352; damage=0.116; cost=0.185
+- periodic_bayes_update: success=0.418 +/- 0.007; false=0.303; missed=0.360; belief=0.322; recovery=0.295; damage=0.132; cost=0.127
+- no_revision_belief: success=0.319 +/- 0.005; false=0.151; missed=0.443; belief=0.220; recovery=0.179; damage=0.158; cost=0.045

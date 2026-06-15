@@ -1,12 +1,15 @@
 # Final Audit
 
-1. Chosen thesis: Robotic Belief Revision Under Intervention explores `Revise robot beliefs only when interventions reveal a violated physical assumption.` for interactive world models.
-2. ICLR-main decision: KILL_ARCHIVE.
-3. Submission-hardening version: v3.
-4. Reason: synthetic-only, template-generated evidence cannot support ICLR main-conference robotics claims.
-5. Closest hostile prior work: see `docs/hostile_prior_work.md`, `docs/hostile_prior_work_100_cards.csv`, and `docs/hostile_reviewer_response.md`.
-6. Reproducibility: synthetic code runs, but no real robot or high-fidelity benchmark is reproduced.
-7. Claim-validity status: main-conference claims killed; archive memo retained.
-8. Exact Downloads PDF path: `C:/Users/wangz/Downloads/120.pdf`
-9. GitHub URL: https://github.com/Jason-Wang313/120_robotic_belief_revision_under_intervention
-10. Confirmation: no visible Desktop copy was requested or made.
+Decision: STRONG_REVISE
+
+The v4 rebuild clears the local evidence gate. The proposed intervention-violation revision method beats `human_intervention_revision` by `0.103 +/- 0.006` success under combined stress with 7/7 paired seed wins. It also reduces false revisions, missed violations, damage, and intervention cost while improving belief consistency and recovery success.
+
+The paper is not ICLR-main ready yet. Missing items remain:
+
+- real robot validation;
+- external high-fidelity simulator validation;
+- independent implementation of all major baselines;
+- videos or qualitative rollouts;
+- full manual related-work synthesis beyond the hostile-pool slice.
+
+Recommended action: keep as a serious submission rebuild candidate, not as a camera-ready main-conference paper.

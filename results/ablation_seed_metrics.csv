@@ -1,0 +1,50 @@
+ablation,seed,interpretation,mean_success_rate,ci95_success_rate,groups
+full_intervention_violation_revision,0,all components,0.724248,0.016190,48
+full_intervention_violation_revision,1,all components,0.725405,0.017670,48
+full_intervention_violation_revision,2,all components,0.726852,0.015577,48
+full_intervention_violation_revision,3,all components,0.726563,0.017197,48
+full_intervention_violation_revision,4,all components,0.735822,0.015893,48
+full_intervention_violation_revision,5,all components,0.732928,0.016616,48
+full_intervention_violation_revision,6,all components,0.730324,0.016941,48
+minus_causal_consistency_check,0,removes causal consistency check,0.641493,0.017640,48
+minus_causal_consistency_check,1,removes causal consistency check,0.645255,0.018518,48
+minus_causal_consistency_check,2,removes causal consistency check,0.659144,0.019952,48
+minus_causal_consistency_check,3,removes causal consistency check,0.660012,0.021291,48
+minus_causal_consistency_check,4,removes causal consistency check,0.658275,0.019549,48
+minus_causal_consistency_check,5,removes causal consistency check,0.661748,0.019291,48
+minus_causal_consistency_check,6,removes causal consistency check,0.657986,0.016936,48
+minus_cost_aware_querying,0,does not price interventions,0.661169,0.016467,48
+minus_cost_aware_querying,1,does not price interventions,0.664062,0.018208,48
+minus_cost_aware_querying,2,does not price interventions,0.664641,0.016846,48
+minus_cost_aware_querying,3,does not price interventions,0.666667,0.018142,48
+minus_cost_aware_querying,4,does not price interventions,0.671007,0.019252,48
+minus_cost_aware_querying,5,does not price interventions,0.662905,0.018371,48
+minus_cost_aware_querying,6,does not price interventions,0.656829,0.013586,48
+minus_intervention_gate,0,updates without intervention gate,0.634549,0.017349,48
+minus_intervention_gate,1,updates without intervention gate,0.631655,0.021627,48
+minus_intervention_gate,2,updates without intervention gate,0.642650,0.018228,48
+minus_intervention_gate,3,updates without intervention gate,0.618056,0.021914,48
+minus_intervention_gate,4,updates without intervention gate,0.633391,0.016063,48
+minus_intervention_gate,5,updates without intervention gate,0.613715,0.021146,48
+minus_intervention_gate,6,updates without intervention gate,0.638310,0.019282,48
+minus_recovery_memory,0,does not reuse intervention outcomes,0.636574,0.018736,48
+minus_recovery_memory,1,does not reuse intervention outcomes,0.634259,0.019014,48
+minus_recovery_memory,2,does not reuse intervention outcomes,0.663484,0.019082,48
+minus_recovery_memory,3,does not reuse intervention outcomes,0.651042,0.015958,48
+minus_recovery_memory,4,does not reuse intervention outcomes,0.650752,0.019503,48
+minus_recovery_memory,5,does not reuse intervention outcomes,0.648148,0.018771,48
+minus_recovery_memory,6,does not reuse intervention outcomes,0.646701,0.015757,48
+minus_violation_classifier,0,removes physical-violation classifier,0.629051,0.020948,48
+minus_violation_classifier,1,removes physical-violation classifier,0.638889,0.016129,48
+minus_violation_classifier,2,removes physical-violation classifier,0.612558,0.018576,48
+minus_violation_classifier,3,removes physical-violation classifier,0.617477,0.017136,48
+minus_violation_classifier,4,removes physical-violation classifier,0.622396,0.019931,48
+minus_violation_classifier,5,removes physical-violation classifier,0.621528,0.021206,48
+minus_violation_classifier,6,removes physical-violation classifier,0.624711,0.018403,48
+uncertainty_only_trigger,0,uses uncertainty without violation evidence,0.565972,0.022308,48
+uncertainty_only_trigger,1,uses uncertainty without violation evidence,0.584201,0.022395,48
+uncertainty_only_trigger,2,uses uncertainty without violation evidence,0.579861,0.016382,48
+uncertainty_only_trigger,3,uses uncertainty without violation evidence,0.572338,0.022564,48
+uncertainty_only_trigger,4,uses uncertainty without violation evidence,0.577546,0.021009,48
+uncertainty_only_trigger,5,uses uncertainty without violation evidence,0.574653,0.019615,48
+uncertainty_only_trigger,6,uses uncertainty without violation evidence,0.584780,0.015575,48

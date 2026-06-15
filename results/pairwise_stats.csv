@@ -1,0 +1,9 @@
+baseline,mean_success_diff,ci95_success_diff,paired_seed_wins,decisive
+no_revision_belief,0.408193,0.007820,7,yes
+periodic_bayes_update,0.309069,0.011379,7,yes
+scalar_uncertainty_trigger,0.251860,0.005041,7,yes
+ensemble_disagreement_revision,0.208995,0.007414,7,yes
+conformal_intervention_filter,0.178943,0.004384,7,yes
+failure_aware_rl_recovery,0.151744,0.010405,7,yes
+human_intervention_revision,0.103009,0.006162,7,yes
+oracle_intervention_belief_revision,-0.098173,0.008202,0,no

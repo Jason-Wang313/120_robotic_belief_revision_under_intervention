@@ -1,0 +1,5 @@
+case,expected_behavior,observed_success,lesson
+malicious_operator_intervention,belief revision should reject adversarial intervention,0.260000,trust modeling is outside the violation gate
+hardware_breakage_after_revision,planner abstains after irrecoverable actuation loss,0.190000,belief revision cannot repair missing control authority
+semantic_goal_change,physical revision should not solve instruction ambiguity,0.350000,requires a separate language clarification loop
+sensor_dropout_during_intervention,revision becomes conservative when evidence is missing,0.390000,sensor-health inference remains a separate module

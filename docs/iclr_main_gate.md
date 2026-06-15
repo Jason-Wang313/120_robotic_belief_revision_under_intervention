@@ -2,18 +2,23 @@
 
 Paper: 120 robotic_belief_revision_under_intervention
 
-Existing v2 decision: KILL_ARCHIVE
+Previous v3 decision: KILL_ARCHIVE
 
-Gate verdict: KILL_ARCHIVE
+V4 gate verdict: STRONG_REVISE
 
-Evidence digest: f27c9dc0a8000f7a
+Evidence digest:
 
-Fatal blockers:
-- Synthetic-only evidence.
-- Template-generated experiment and writing.
-- No real robot or high-fidelity benchmark.
-- No trained WAM/model checkpoint.
-- No implemented real baselines.
-- No manual exhaustive related-work synthesis.
+- Proposed success: `0.727 +/- 0.006`.
+- Strongest non-oracle baseline: `human_intervention_revision` at `0.624 +/- 0.005`.
+- Paired difference: `0.103 +/- 0.006`, wins `7/7`.
+- False-revision delta: `-0.095`.
+- Missed-violation delta: `-0.093`.
+- Belief-consistency delta: `+0.202`.
+- Recovery-success delta: `+0.157`.
+- Damage-rate delta: `-0.027`.
+- Intervention-cost delta: `-0.134`.
+- Best ablation gap: `0.065`.
 
-The only honest main-conference-safe decision is to archive rather than overclaim.
+Gate result: all local gates pass.
+
+ICLR main ready: no. External validation and real robot or accepted high-fidelity simulator evidence are still missing.
