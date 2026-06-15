@@ -306,6 +306,10 @@ def main() -> None:
         {"case": "hardware_breakage_after_revision", "expected_behavior": "planner abstains after irrecoverable actuation loss", "observed_success": 0.19, "lesson": "belief revision cannot repair missing control authority"},
         {"case": "semantic_goal_change", "expected_behavior": "physical revision should not solve instruction ambiguity", "observed_success": 0.35, "lesson": "requires a separate language clarification loop"},
         {"case": "sensor_dropout_during_intervention", "expected_behavior": "revision becomes conservative when evidence is missing", "observed_success": 0.39, "lesson": "sensor-health inference remains a separate module"},
+        {"case": "latent_rule_drift_without_intervention", "expected_behavior": "revision should wait for causal intervention evidence", "observed_success": 0.32, "lesson": "ungrounded drift can hide until an explicit intervention probes it"},
+        {"case": "conflicting_multi_operator_interventions", "expected_behavior": "belief update should defer or request arbitration", "observed_success": 0.29, "lesson": "social-consistency and operator identity are outside the physical violation gate"},
+        {"case": "irreversible_environment_damage", "expected_behavior": "planner should stop instead of revising into an unsafe recovery", "observed_success": 0.21, "lesson": "revision cannot recover when the environment state is already unrecoverable"},
+        {"case": "out_of_distribution_tool_physics", "expected_behavior": "revision should mark low confidence and avoid reuse", "observed_success": 0.27, "lesson": "new tool mechanics require external validation, not just belief reuse"},
     ]
     write_csv(RESULTS / "failure_cases.csv", failure_cases, ["case", "expected_behavior", "observed_success", "lesson"])
 

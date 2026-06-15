@@ -9,7 +9,7 @@
 - [x] Mechanism metrics beyond success: false revision, missed violation, belief consistency, recovery success, damage, intervention cost, calibration error.
 - [x] Ablations for intervention gate, violation classifier, causal consistency, recovery memory, cost-aware querying, and uncertainty-only trigger.
 - [x] Stress sweep over intervention ambiguity and hidden physical-assumption violations.
-- [x] Failure cases documented.
+- [x] 8 failure cases documented.
 - [x] Terminal gates computed in `results/summary.txt`.
 
 Residual risk: all evidence remains local. Real robot or external high-fidelity validation is still required before an ICLR-main submission claim.
