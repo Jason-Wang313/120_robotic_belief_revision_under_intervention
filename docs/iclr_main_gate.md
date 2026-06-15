@@ -4,7 +4,7 @@ Paper: 120 robotic_belief_revision_under_intervention
 
 Previous v3 decision: KILL_ARCHIVE
 
-V4 gate verdict: STRONG_REVISE
+V4.1 gate verdict: STRONG_REVISE
 
 Evidence digest:
 
@@ -18,6 +18,10 @@ Evidence digest:
 - Damage-rate delta: `-0.027`.
 - Intervention-cost delta: `-0.134`.
 - Best ablation gap: `0.065`.
+- Raw evidence coverage: `15,120` task/regime/split/method/seed rows.
+- Ablation coverage: `2,352` task/regime/seed rows.
+- Stress-sweep coverage: `210` method/stress/seed rows.
+- Failure cases: `8` documented intervention-gated belief-revision boundaries.
 
 Gate result: all local gates pass.
 

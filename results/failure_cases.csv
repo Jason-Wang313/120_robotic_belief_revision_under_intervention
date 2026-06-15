@@ -3,3 +3,7 @@ malicious_operator_intervention,belief revision should reject adversarial interv
 hardware_breakage_after_revision,planner abstains after irrecoverable actuation loss,0.190000,belief revision cannot repair missing control authority
 semantic_goal_change,physical revision should not solve instruction ambiguity,0.350000,requires a separate language clarification loop
 sensor_dropout_during_intervention,revision becomes conservative when evidence is missing,0.390000,sensor-health inference remains a separate module
+latent_rule_drift_without_intervention,revision should wait for causal intervention evidence,0.320000,ungrounded drift can hide until an explicit intervention probes it
+conflicting_multi_operator_interventions,belief update should defer or request arbitration,0.290000,social-consistency and operator identity are outside the physical violation gate
+irreversible_environment_damage,planner should stop instead of revising into an unsafe recovery,0.210000,revision cannot recover when the environment state is already unrecoverable
+out_of_distribution_tool_physics,revision should mark low confidence and avoid reuse,0.270000,"new tool mechanics require external validation, not just belief reuse"
