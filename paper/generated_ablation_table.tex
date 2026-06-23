@@ -1,0 +1,16 @@
+\begin{tabular}{lrrl}
+\toprule
+ablation & success & utility & description \\
+\midrule
+full\_causal\_intervention\_revision & 0.729 & 0.875 & all components \\
+minus\_query\_cost\_model & 0.692 & 0.797 & does not price interventions \\
+minus\_recovery\_value & 0.689 & 0.813 & removes recovery-value term \\
+minus\_calibration\_term & 0.686 & 0.808 & does not calibrate predicted revision risk \\
+minus\_belief\_delta\_memory & 0.686 & 0.808 & does not reuse confirmed physical revisions \\
+minus\_fixed\_risk\_gate & 0.680 & 0.799 & removes fixed-risk acceptance screen \\
+minus\_operator\_guard & 0.677 & 0.795 & does not guard false or conflicting operators \\
+minus\_counterfactual\_consistency & 0.675 & 0.790 & removes counterfactual transition/recovery check \\
+minus\_physical\_violation\_classifier & 0.666 & 0.777 & removes physical-violation classifier \\
+minus\_intervention\_gate & 0.658 & 0.764 & updates without intervention gate \\
+\bottomrule
+\end{tabular}

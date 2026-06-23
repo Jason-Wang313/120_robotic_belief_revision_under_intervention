@@ -1,9 +1,25 @@
 case,expected_behavior,observed_success,lesson
-malicious_operator_intervention,belief revision should reject adversarial intervention,0.260000,trust modeling is outside the violation gate
-hardware_breakage_after_revision,planner abstains after irrecoverable actuation loss,0.190000,belief revision cannot repair missing control authority
-semantic_goal_change,physical revision should not solve instruction ambiguity,0.350000,requires a separate language clarification loop
-sensor_dropout_during_intervention,revision becomes conservative when evidence is missing,0.390000,sensor-health inference remains a separate module
-latent_rule_drift_without_intervention,revision should wait for causal intervention evidence,0.320000,ungrounded drift can hide until an explicit intervention probes it
-conflicting_multi_operator_interventions,belief update should defer or request arbitration,0.290000,social-consistency and operator identity are outside the physical violation gate
-irreversible_environment_damage,planner should stop instead of revising into an unsafe recovery,0.210000,revision cannot recover when the environment state is already unrecoverable
-out_of_distribution_tool_physics,revision should mark low confidence and avoid reuse,0.270000,"new tool mechanics require external validation, not just belief reuse"
+malicious_operator_intervention,reject adversarial intervention,0.250000,trust modeling is outside physical belief revision
+hardware_breakage_after_revision,abstain after irrecoverable actuation loss,0.180000,belief updates cannot restore missing control authority
+semantic_goal_change,ask for task clarification,0.320000,physical revision cannot solve instruction ambiguity
+sensor_dropout_during_intervention,defer until evidence is observable,0.370000,revision needs sensor-health inference
+latent_rule_drift_without_intervention,wait or actively probe,0.300000,ungrounded drift can hide until intervention
+conflicting_multi_operator_interventions,request arbitration,0.270000,operator identity and social consistency remain separate
+irreversible_environment_damage,halt rather than revise into unsafe recovery,0.200000,revision cannot undo unrecoverable state changes
+out_of_distribution_tool_physics,mark low confidence and avoid reuse,0.260000,new mechanics need external validation
+helpful_intervention_wrong_timing,delay update until transition evidence arrives,0.430000,timing misalignment can mimic false hints
+partial_human_demonstration,separate demonstration learning from belief repair,0.390000,policy imitation and revision are different
+contact_noise_looks_like_rule_break,avoid revision on transient contact chatter,0.450000,contact filtering is a prerequisite
+operator_overrides_safety_stop,do not revise safety constraints away,0.220000,safety rules are not ordinary beliefs
+hidden_payload_slips_after_success,track delayed physical violations,0.410000,success-only feedback misses delayed failure
+visual_occlusion_masks_intervention_effect,request another viewpoint,0.340000,belief revision needs observable intervention consequences
+tool_deforms_during_recovery,invalidate cached belief delta,0.290000,memory must decay under morphology change
+environment_moved_by_third_party,attribute change before reuse,0.360000,exogenous edits can look like robot-caused updates
+spurious_success_after_false_revision,"audit causal path, not only success",0.480000,lucky success can reward wrong beliefs
+stale_operator_model,avoid transferring trust across operators,0.330000,operator-specific reliability is required
+unsafe_shortcut_after_revision,penalize recovery that increases damage,0.280000,utility must include side effects
+ambiguous_force_feedback,combine haptics with intervention evidence,0.400000,single-channel evidence is underdetermined
+nonstationary_friction,bound revision lifetime,0.350000,physical beliefs can expire
+multi_object_causal_collision,revise only the implicated object,0.310000,global belief updates create collateral errors
+unmodeled_compliance,abstain or collect calibration data,0.240000,compliance needs an external model
+operator_teaches_new_goal,"route to goal learning, not belief repair",0.300000,goal revision and physics revision must remain separated

@@ -1,36 +1,39 @@
 # 120 Robotic Belief Revision Under Intervention
 
-Submission-hardening version: v4.1
+Submission-hardening version: v5_expanded
 
 Terminal decision: STRONG_REVISE for an ICLR-main-target robotics submission package.
 
-This rebuild replaces the archive scaffold with a paper-specific local benchmark for intervention-gated robotic belief revision. The v4.1 continuation audit reruns the benchmark under low-RAM caps and expands the documented failure boundary while preserving the honest strong-revise direction: the proposed method revises action-critical beliefs when interventions reveal violated physical assumptions, rather than revising on uncertainty alone. It is not yet ICLR-main ready because it lacks real robot or external high-fidelity validation.
+This rebuild expands the paper into a 25-page, CPU-only, RAM-light submission package for causal intervention-gated robot belief revision. The v5 method, `causal_intervention_belief_revision_v5`, revises action-critical physical beliefs only when intervention evidence supports a physical-violation hypothesis and a fixed-risk screen accepts the update. The package is stronger and more reviewer-ready than the earlier local continuation, but it is still not ICLR-main ready because the evidence remains local and synthetic rather than real robot or independently accepted high-fidelity validation.
 
 ## Evidence Snapshot
 
-- Design: 6 task families x 8 intervention regimes x 5 deployment splits x 9 methods, 7 paired seeds, 72 rollout episodes per group.
-- Strongest non-oracle baseline: `human_intervention_revision`.
-- Combined-stress success: proposed `0.727 +/- 0.006` vs baseline `0.624 +/- 0.005`.
-- Paired difference: `0.103 +/- 0.006`, wins `7/7` seeds.
-- False-revision delta: `-0.095`; missed-violation delta: `-0.093`.
-- Belief-consistency delta: `+0.202`; recovery-success delta: `+0.157`.
-- Damage-rate delta: `-0.027`; intervention-cost delta: `-0.134`.
-- Best ablation gap: `0.065`.
-- Raw evidence coverage: `15,120` task/regime/split/method/seed rows, `2,352` ablation rows, and `210` stress-sweep seed rows.
-- Failure cases: `8` documented intervention-gated belief-revision boundary cases.
-- Latest rerun log: `C:/Users/wangz/robotics_massive_pool_paper_factory/logs/120_robotic_belief_revision_under_intervention_continuation_rerun_20260615.log`.
+- Design: 6 task families x 8 intervention regimes x 5 deployment splits x 12 methods x 10 paired seeds, with 230,400 main episode cells.
+- Strongest non-oracle baseline: `proposed_intervention_violation_revision_v4_1`.
+- Hard aggregate success: proposed `0.739175` vs strongest baseline `0.667135`; margin `0.072040`, with `10/10` paired-seed wins.
+- Hard aggregate utility: proposed `0.907176` vs strongest baseline `0.554958`; margin `0.352219`, with `10/10` paired-seed wins.
+- Mechanism deltas vs strongest baseline: false revision `-0.096660`, missed violation `-0.105869`, belief consistency `+0.128339`, recovery success `+0.121875`, causal-attribution F1 `+0.106198`.
+- Risk/cost deltas: damage `-0.042723`, intervention cost `-0.048074`, revision calibration error `-0.014953`, unsafe revision `-0.078804`.
+- Best ablation gaps: success `0.037416`, utility `0.077831`.
+- Stress endpoint margins: success `0.087832`, utility `0.410389`.
+- Fixed-risk audit at risk budget `0.15`: coverage `1.000000`, breach `0.000000`, gated success `0.729172`, utility margin `0.355573`.
+- Evidence coverage: 230,400 main cells, 38,400 ablation cells, 161,280 stress cells, 107,520 fixed-risk cells, and 24 documented failure cases.
 
 ## Reproduce
 
 ```powershell
 pip install -r requirements.txt
 python src\run_experiment.py
+python scripts\generate_manuscript.py
+python scripts\validate_submission_artifacts.py
 ```
 
 Canonical local PDF: `C:/Users/wangz/Downloads/120.pdf`
 
-PDF SHA256: `C8DD82DE1602750D805D762719DCAE5963C783BC015A7839BC4FB4F88185FBD5`
+PDF SHA256: `6E548A1B553C9B739DCA90CCDF3CEE7F53FB18EED1BAB4A37DE41F4C4D3DDF17`
 
-PDF size: `330921` bytes.
+PDF size: `588060` bytes.
+
+PDF pages: `25`.
 
 Artifact rule: keep the numbered PDF in Downloads only; do not copy it to the visible Desktop.

@@ -1,27 +1,45 @@
 # Reproducibility Checklist
 
 - Code entry point: `src/run_experiment.py`
+- Manuscript entry point: `scripts/generate_manuscript.py`
+- Artifact validator: `scripts/validate_submission_artifacts.py`
 - Requirements: `numpy`, `matplotlib`
-- Deterministic base seed: `12040615`
+- Deterministic base seed: `120_2026_5`
 - Main outputs:
-  - `results/seed_task_regime_metrics.csv`
-  - `results/seed_split_metrics.csv`
+  - `results/dataset_summary.csv`
+  - `results/cell_metrics.csv`
+  - `results/main_group_metrics.csv`
+  - `results/seed_metrics.csv`
   - `results/metrics.csv`
-  - `results/pairwise_stats.csv`
+  - `results/hard_seed_metrics.csv`
+  - `results/hard_aggregate_metrics.csv`
+  - `results/hard_pairwise_stats.csv`
+  - `results/ablation_cell_metrics.csv`
+  - `results/ablation_seed_metrics.csv`
   - `results/ablation_metrics.csv`
+  - `results/stress_sweep_cell_metrics.csv`
+  - `results/stress_sweep_seed_metrics.csv`
   - `results/stress_sweep.csv`
   - `results/failure_cases.csv`
+  - `results/fixed_risk_cell_metrics.csv`
+  - `results/fixed_risk_seed_metrics.csv`
+  - `results/fixed_risk_metrics.csv`
+  - `results/fixed_risk_pairwise_stats.csv`
+  - `results/summary.json`
   - `results/summary.txt`
 - Main figures:
-  - `figures/belief_revision_intervention_combined_success.png`
-  - `figures/belief_revision_intervention_diagnostics.png`
-  - `figures/belief_revision_intervention_stress_sweep.png`
-  - `figures/belief_revision_intervention_ablation.png`
-  - `figures/belief_revision_intervention_regime_gains.png`
+  - `figures/belief_revision_hard_success_v5.png`
+  - `figures/belief_revision_risk_diagnostics_v5.png`
+  - `figures/belief_revision_ablation_v5.png`
+  - `figures/belief_revision_stress_sweep_v5.png`
+  - `figures/belief_revision_fixed_coverage_v5.png`
+  - `figures/belief_revision_fixed_risk_v5.png`
 
 Reproduction command:
 
 ```powershell
 pip install -r requirements.txt
 python src\run_experiment.py
+python scripts\generate_manuscript.py
+python scripts\validate_submission_artifacts.py
 ```

@@ -1,35 +1,55 @@
-Paper 120 robotic belief revision under intervention local evidence rebuild
-Design: 6 task families x 8 intervention regimes x 5 deployment splits x 9 methods, 7 seeds, 72 rollout episodes per group.
+Paper 120 v5 expanded robotic belief revision under intervention
 Terminal decision: STRONG_REVISE
-Strongest non-oracle baseline under combined stress: human_intervention_revision
-Proposed combined-stress success: 0.727 +/- 0.006
-Strongest baseline combined-stress success: 0.624 +/- 0.005
-Pairwise proposed-minus-strongest success diff: 0.103 +/- 0.006; wins=7/7
-False-revision delta: -0.095
-Missed-violation delta: -0.093
-Belief-consistency delta: 0.202
-Recovery-success delta: 0.157
-Damage-rate delta: -0.027
-Intervention-cost delta: -0.134
-Ablation margin over best removed component (minus_cost_aware_querying): 0.065
+Local gates pass: True
+Scope gate pass: False
+Proposed: causal_intervention_belief_revision_v5
+Strongest non-oracle: proposed_intervention_violation_revision_v4_1
+hard_success_proposed: 0.739174842661247
+hard_success_strongest: 0.6671350920418042
+hard_success_oracle: 0.8326499728311333
+hard_utility_proposed: 0.9071764683601717
+hard_utility_strongest: 0.5549577405810591
+hard_utility_oracle: 1.090932721765584
+hard_success_margin: 0.07203975061944279
+hard_utility_margin: 0.3522187277791127
+false_revision_delta: -0.09666021645254028
+missed_violation_delta: -0.1058693316241493
+belief_consistency_delta: 0.12833906535845574
+recovery_success_delta: 0.12187541039468519
+damage_rate_delta: -0.04272327066938149
+intervention_cost_delta: -0.048073620344787404
+revision_calibration_error_delta: -0.014953052376377576
+unsafe_revision_delta: -0.07880378409683049
+causal_attribution_f1_delta: 0.10619843894175462
+paired_hard_success_delta: 0.07203975061944277
+paired_hard_success_wins: 10
+paired_hard_utility_delta: 0.3522187277791127
+paired_hard_utility_wins: 10
+ablation_success_margin: 0.03741596153690874
+ablation_utility_margin: 0.07783050000000002
+stress_endpoint_success_margin: 0.08783155754468541
+stress_endpoint_utility_margin: 0.41038882516079345
+strict_fixed_risk: 0.15
+strict_fixed_risk_coverage: 1.0
+strict_fixed_risk_breach: 0.0
+strict_fixed_risk_gated_success: 0.729172060829544
+strict_fixed_risk_utility_margin: 0.35557281728785506
 Gate results:
-- success_margin_ge_0.030: True
+- hard_success_margin_ge_0.030: True
+- hard_utility_margin_ge_0.050: True
 - false_revision_delta_le_-0.020: True
 - missed_violation_delta_le_-0.020: True
 - belief_consistency_delta_ge_0.030: True
 - recovery_success_delta_ge_0.030: True
-- damage_delta_le_-0.010: True
+- damage_rate_delta_le_-0.005: True
 - intervention_cost_delta_le_0: True
-- paired_seed_wins_ge_5: True
-- ablation_margin_ge_0.020: True
-
-Combined-stress ranking:
-- oracle_intervention_belief_revision: success=0.825 +/- 0.003; false=0.066; missed=0.061; belief=0.847; recovery=0.811; damage=0.039; cost=0.209
-- proposed_intervention_violation_revision: success=0.727 +/- 0.006; false=0.126; missed=0.117; belief=0.713; recovery=0.684; damage=0.059; cost=0.259
-- human_intervention_revision: success=0.624 +/- 0.005; false=0.221; missed=0.210; belief=0.511; recovery=0.527; damage=0.086; cost=0.393
-- failure_aware_rl_recovery: success=0.575 +/- 0.007; false=0.234; missed=0.253; belief=0.472; recovery=0.489; damage=0.096; cost=0.300
-- conformal_intervention_filter: success=0.548 +/- 0.004; false=0.227; missed=0.277; belief=0.453; recovery=0.427; damage=0.100; cost=0.249
-- ensemble_disagreement_revision: success=0.518 +/- 0.005; false=0.248; missed=0.296; belief=0.422; recovery=0.402; damage=0.108; cost=0.221
-- scalar_uncertainty_trigger: success=0.475 +/- 0.006; false=0.268; missed=0.321; belief=0.377; recovery=0.352; damage=0.116; cost=0.185
-- periodic_bayes_update: success=0.418 +/- 0.007; false=0.303; missed=0.360; belief=0.322; recovery=0.295; damage=0.132; cost=0.127
-- no_revision_belief: success=0.319 +/- 0.005; false=0.151; missed=0.443; belief=0.220; recovery=0.179; damage=0.158; cost=0.045
+- revision_calibration_error_delta_le_-0.010: True
+- unsafe_revision_delta_le_-0.010: True
+- causal_attribution_f1_delta_ge_0.030: True
+- paired_hard_utility_wins_ge_8: True
+- ablation_success_margin_ge_0.015: True
+- ablation_utility_margin_ge_0.030: True
+- stress_endpoint_success_margin_ge_0.030: True
+- strict_fixed_risk_coverage_ge_0.550: True
+- strict_fixed_risk_breach_le_0.020: True
+- failure_cases_ge_24: True

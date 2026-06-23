@@ -2,6 +2,6 @@
 
 Decision: STRONG_REVISE
 
-The v4 benchmark creates a defensible novelty boundary around interventions that reveal violated physical assumptions. The decisive point is the combined success gain, simultaneous false-revision and missed-violation reduction, belief-consistency and recovery improvements, cost reduction, and ablation support.
+The v5 benchmark creates a defensible novelty boundary around causal intervention-gated physical belief revision. The contribution is not generic belief updating, POMDP filtering, or human-command following; it is the combination of intervention evidence, physical-violation hypotheses, counterfactual recovery consistency, belief-delta memory, cost-aware querying, calibration, and fixed-risk acceptance for action-critical robot beliefs.
 
-The idea remains risky for ICLR main without external validation, but it is no longer an archive-only scaffold.
+The idea remains risky for ICLR main without external validation, but it is now a serious local submission candidate rather than an archive scaffold.

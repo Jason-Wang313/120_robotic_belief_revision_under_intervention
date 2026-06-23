@@ -1,50 +1,101 @@
-ablation,seed,interpretation,mean_success_rate,ci95_success_rate,groups
-full_intervention_violation_revision,0,all components,0.724248,0.016190,48
-full_intervention_violation_revision,1,all components,0.725405,0.017670,48
-full_intervention_violation_revision,2,all components,0.726852,0.015577,48
-full_intervention_violation_revision,3,all components,0.726563,0.017197,48
-full_intervention_violation_revision,4,all components,0.735822,0.015893,48
-full_intervention_violation_revision,5,all components,0.732928,0.016616,48
-full_intervention_violation_revision,6,all components,0.730324,0.016941,48
-minus_causal_consistency_check,0,removes causal consistency check,0.641493,0.017640,48
-minus_causal_consistency_check,1,removes causal consistency check,0.645255,0.018518,48
-minus_causal_consistency_check,2,removes causal consistency check,0.659144,0.019952,48
-minus_causal_consistency_check,3,removes causal consistency check,0.660012,0.021291,48
-minus_causal_consistency_check,4,removes causal consistency check,0.658275,0.019549,48
-minus_causal_consistency_check,5,removes causal consistency check,0.661748,0.019291,48
-minus_causal_consistency_check,6,removes causal consistency check,0.657986,0.016936,48
-minus_cost_aware_querying,0,does not price interventions,0.661169,0.016467,48
-minus_cost_aware_querying,1,does not price interventions,0.664062,0.018208,48
-minus_cost_aware_querying,2,does not price interventions,0.664641,0.016846,48
-minus_cost_aware_querying,3,does not price interventions,0.666667,0.018142,48
-minus_cost_aware_querying,4,does not price interventions,0.671007,0.019252,48
-minus_cost_aware_querying,5,does not price interventions,0.662905,0.018371,48
-minus_cost_aware_querying,6,does not price interventions,0.656829,0.013586,48
-minus_intervention_gate,0,updates without intervention gate,0.634549,0.017349,48
-minus_intervention_gate,1,updates without intervention gate,0.631655,0.021627,48
-minus_intervention_gate,2,updates without intervention gate,0.642650,0.018228,48
-minus_intervention_gate,3,updates without intervention gate,0.618056,0.021914,48
-minus_intervention_gate,4,updates without intervention gate,0.633391,0.016063,48
-minus_intervention_gate,5,updates without intervention gate,0.613715,0.021146,48
-minus_intervention_gate,6,updates without intervention gate,0.638310,0.019282,48
-minus_recovery_memory,0,does not reuse intervention outcomes,0.636574,0.018736,48
-minus_recovery_memory,1,does not reuse intervention outcomes,0.634259,0.019014,48
-minus_recovery_memory,2,does not reuse intervention outcomes,0.663484,0.019082,48
-minus_recovery_memory,3,does not reuse intervention outcomes,0.651042,0.015958,48
-minus_recovery_memory,4,does not reuse intervention outcomes,0.650752,0.019503,48
-minus_recovery_memory,5,does not reuse intervention outcomes,0.648148,0.018771,48
-minus_recovery_memory,6,does not reuse intervention outcomes,0.646701,0.015757,48
-minus_violation_classifier,0,removes physical-violation classifier,0.629051,0.020948,48
-minus_violation_classifier,1,removes physical-violation classifier,0.638889,0.016129,48
-minus_violation_classifier,2,removes physical-violation classifier,0.612558,0.018576,48
-minus_violation_classifier,3,removes physical-violation classifier,0.617477,0.017136,48
-minus_violation_classifier,4,removes physical-violation classifier,0.622396,0.019931,48
-minus_violation_classifier,5,removes physical-violation classifier,0.621528,0.021206,48
-minus_violation_classifier,6,removes physical-violation classifier,0.624711,0.018403,48
-uncertainty_only_trigger,0,uses uncertainty without violation evidence,0.565972,0.022308,48
-uncertainty_only_trigger,1,uses uncertainty without violation evidence,0.584201,0.022395,48
-uncertainty_only_trigger,2,uses uncertainty without violation evidence,0.579861,0.016382,48
-uncertainty_only_trigger,3,uses uncertainty without violation evidence,0.572338,0.022564,48
-uncertainty_only_trigger,4,uses uncertainty without violation evidence,0.577546,0.021009,48
-uncertainty_only_trigger,5,uses uncertainty without violation evidence,0.574653,0.019615,48
-uncertainty_only_trigger,6,uses uncertainty without violation evidence,0.584780,0.015575,48
+ablation,seed,description,success,ci95_success,utility,ci95_utility,n
+full_causal_intervention_revision,0,all components,0.730458,0.005571,0.875970,0.017264,384
+full_causal_intervention_revision,1,all components,0.728404,0.005463,0.875709,0.017049,384
+full_causal_intervention_revision,2,all components,0.730350,0.005540,0.875272,0.017178,384
+full_causal_intervention_revision,3,all components,0.727892,0.005633,0.874241,0.017278,384
+full_causal_intervention_revision,4,all components,0.729017,0.005421,0.873671,0.017123,384
+full_causal_intervention_revision,5,all components,0.729530,0.005791,0.874031,0.017427,384
+full_causal_intervention_revision,6,all components,0.727857,0.005511,0.874264,0.017157,384
+full_causal_intervention_revision,7,all components,0.730834,0.005505,0.875479,0.017161,384
+full_causal_intervention_revision,8,all components,0.729702,0.005510,0.876530,0.017102,384
+full_causal_intervention_revision,9,all components,0.728878,0.005600,0.874481,0.017264,384
+minus_belief_delta_memory,0,does not reuse confirmed physical revisions,0.687987,0.006361,0.809242,0.018468,384
+minus_belief_delta_memory,1,does not reuse confirmed physical revisions,0.685522,0.006190,0.808981,0.018246,384
+minus_belief_delta_memory,2,does not reuse confirmed physical revisions,0.687015,0.006277,0.808544,0.018377,384
+minus_belief_delta_memory,3,does not reuse confirmed physical revisions,0.684941,0.006357,0.807513,0.018476,384
+minus_belief_delta_memory,4,does not reuse confirmed physical revisions,0.685631,0.006147,0.806944,0.018326,384
+minus_belief_delta_memory,5,does not reuse confirmed physical revisions,0.685365,0.006479,0.807303,0.018624,384
+minus_belief_delta_memory,6,does not reuse confirmed physical revisions,0.684175,0.006179,0.807537,0.018359,384
+minus_belief_delta_memory,7,does not reuse confirmed physical revisions,0.688060,0.006279,0.808752,0.018369,384
+minus_belief_delta_memory,8,does not reuse confirmed physical revisions,0.686273,0.006256,0.809802,0.018303,384
+minus_belief_delta_memory,9,does not reuse confirmed physical revisions,0.685739,0.006335,0.807753,0.018466,384
+minus_calibration_term,0,does not calibrate predicted revision risk,0.687781,0.006335,0.809242,0.018468,384
+minus_calibration_term,1,does not calibrate predicted revision risk,0.685573,0.006130,0.808981,0.018246,384
+minus_calibration_term,2,does not calibrate predicted revision risk,0.686615,0.006228,0.808544,0.018377,384
+minus_calibration_term,3,does not calibrate predicted revision risk,0.684835,0.006369,0.807513,0.018476,384
+minus_calibration_term,4,does not calibrate predicted revision risk,0.685546,0.006184,0.806944,0.018326,384
+minus_calibration_term,5,does not calibrate predicted revision risk,0.686122,0.006431,0.807303,0.018624,384
+minus_calibration_term,6,does not calibrate predicted revision risk,0.684648,0.006294,0.807537,0.018359,384
+minus_calibration_term,7,does not calibrate predicted revision risk,0.687883,0.006319,0.808752,0.018369,384
+minus_calibration_term,8,does not calibrate predicted revision risk,0.686812,0.006271,0.809802,0.018303,384
+minus_calibration_term,9,does not calibrate predicted revision risk,0.685872,0.006315,0.807753,0.018466,384
+minus_counterfactual_consistency,0,removes counterfactual transition/recovery check,0.676115,0.006552,0.791448,0.018791,384
+minus_counterfactual_consistency,1,removes counterfactual transition/recovery check,0.673313,0.006336,0.791187,0.018568,384
+minus_counterfactual_consistency,2,removes counterfactual transition/recovery check,0.675347,0.006487,0.790750,0.018699,384
+minus_counterfactual_consistency,3,removes counterfactual transition/recovery check,0.673618,0.006603,0.789719,0.018797,384
+minus_counterfactual_consistency,4,removes counterfactual transition/recovery check,0.674558,0.006386,0.789150,0.018649,384
+minus_counterfactual_consistency,5,removes counterfactual transition/recovery check,0.674943,0.006635,0.789509,0.018945,384
+minus_counterfactual_consistency,6,removes counterfactual transition/recovery check,0.672968,0.006458,0.789743,0.018682,384
+minus_counterfactual_consistency,7,removes counterfactual transition/recovery check,0.676375,0.006413,0.790958,0.018692,384
+minus_counterfactual_consistency,8,removes counterfactual transition/recovery check,0.675062,0.006453,0.792008,0.018626,384
+minus_counterfactual_consistency,9,removes counterfactual transition/recovery check,0.674417,0.006571,0.789959,0.018788,384
+minus_fixed_risk_gate,0,removes fixed-risk acceptance screen,0.681911,0.006473,0.800345,0.018629,384
+minus_fixed_risk_gate,1,removes fixed-risk acceptance screen,0.679512,0.006187,0.800084,0.018407,384
+minus_fixed_risk_gate,2,removes fixed-risk acceptance screen,0.681079,0.006393,0.799647,0.018538,384
+minus_fixed_risk_gate,3,removes fixed-risk acceptance screen,0.678659,0.006409,0.798616,0.018636,384
+minus_fixed_risk_gate,4,removes fixed-risk acceptance screen,0.678742,0.006279,0.798047,0.018488,384
+minus_fixed_risk_gate,5,removes fixed-risk acceptance screen,0.680166,0.006521,0.798406,0.018785,384
+minus_fixed_risk_gate,6,removes fixed-risk acceptance screen,0.678411,0.006330,0.798640,0.018521,384
+minus_fixed_risk_gate,7,removes fixed-risk acceptance screen,0.681926,0.006433,0.799855,0.018530,384
+minus_fixed_risk_gate,8,removes fixed-risk acceptance screen,0.681366,0.006287,0.800905,0.018464,384
+minus_fixed_risk_gate,9,removes fixed-risk acceptance screen,0.679896,0.006434,0.798856,0.018627,384
+minus_intervention_gate,0,updates without intervention gate,0.658425,0.006845,0.764757,0.019277,384
+minus_intervention_gate,1,updates without intervention gate,0.656486,0.006617,0.764496,0.019051,384
+minus_intervention_gate,2,updates without intervention gate,0.658578,0.006790,0.764059,0.019183,384
+minus_intervention_gate,3,updates without intervention gate,0.656659,0.006923,0.763028,0.019281,384
+minus_intervention_gate,4,updates without intervention gate,0.656658,0.006643,0.762459,0.019135,384
+minus_intervention_gate,5,updates without intervention gate,0.657412,0.006948,0.762818,0.019429,384
+minus_intervention_gate,6,updates without intervention gate,0.655698,0.006692,0.763052,0.019168,384
+minus_intervention_gate,7,updates without intervention gate,0.659528,0.006788,0.764267,0.019180,384
+minus_intervention_gate,8,updates without intervention gate,0.658050,0.006737,0.765317,0.019111,384
+minus_intervention_gate,9,updates without intervention gate,0.657740,0.006933,0.763268,0.019274,384
+minus_operator_guard,0,does not guard false or conflicting operators,0.678452,0.006467,0.795897,0.018710,384
+minus_operator_guard,1,does not guard false or conflicting operators,0.675956,0.006309,0.795636,0.018487,384
+minus_operator_guard,2,does not guard false or conflicting operators,0.678202,0.006448,0.795199,0.018618,384
+minus_operator_guard,3,does not guard false or conflicting operators,0.676045,0.006500,0.794168,0.018717,384
+minus_operator_guard,4,does not guard false or conflicting operators,0.677136,0.006268,0.793598,0.018568,384
+minus_operator_guard,5,does not guard false or conflicting operators,0.677184,0.006643,0.793958,0.018865,384
+minus_operator_guard,6,does not guard false or conflicting operators,0.676409,0.006386,0.794191,0.018601,384
+minus_operator_guard,7,does not guard false or conflicting operators,0.679060,0.006432,0.795406,0.018611,384
+minus_operator_guard,8,does not guard false or conflicting operators,0.678333,0.006456,0.796457,0.018545,384
+minus_operator_guard,9,does not guard false or conflicting operators,0.677781,0.006501,0.794408,0.018708,384
+minus_physical_violation_classifier,0,removes physical-violation classifier,0.667130,0.006668,0.778103,0.019034,384
+minus_physical_violation_classifier,1,removes physical-violation classifier,0.665264,0.006470,0.777842,0.018809,384
+minus_physical_violation_classifier,2,removes physical-violation classifier,0.666507,0.006624,0.777405,0.018940,384
+minus_physical_violation_classifier,3,removes physical-violation classifier,0.665137,0.006726,0.776374,0.019039,384
+minus_physical_violation_classifier,4,removes physical-violation classifier,0.665169,0.006536,0.775804,0.018892,384
+minus_physical_violation_classifier,5,removes physical-violation classifier,0.665923,0.006803,0.776164,0.019187,384
+minus_physical_violation_classifier,6,removes physical-violation classifier,0.664607,0.006557,0.776397,0.018925,384
+minus_physical_violation_classifier,7,removes physical-violation classifier,0.667768,0.006607,0.777612,0.018936,384
+minus_physical_violation_classifier,8,removes physical-violation classifier,0.666083,0.006623,0.778663,0.018868,384
+minus_physical_violation_classifier,9,removes physical-violation classifier,0.665763,0.006694,0.776614,0.019031,384
+minus_query_cost_model,0,does not price interventions,0.693204,0.006282,0.798139,0.018307,384
+minus_query_cost_model,1,does not price interventions,0.691549,0.006020,0.797878,0.018086,384
+minus_query_cost_model,2,does not price interventions,0.692394,0.006187,0.797441,0.018216,384
+minus_query_cost_model,3,does not price interventions,0.690360,0.006261,0.796410,0.018315,384
+minus_query_cost_model,4,does not price interventions,0.691665,0.006085,0.795841,0.018165,384
+minus_query_cost_model,5,does not price interventions,0.692089,0.006327,0.796200,0.018464,384
+minus_query_cost_model,6,does not price interventions,0.689813,0.006132,0.796434,0.018198,384
+minus_query_cost_model,7,does not price interventions,0.693439,0.006193,0.797649,0.018207,384
+minus_query_cost_model,8,does not price interventions,0.692590,0.006119,0.798699,0.018143,384
+minus_query_cost_model,9,does not price interventions,0.691659,0.006256,0.796650,0.018305,384
+minus_recovery_value,0,removes recovery-value term,0.690687,0.006252,0.813691,0.018387,384
+minus_recovery_value,1,removes recovery-value term,0.688530,0.006093,0.813430,0.018166,384
+minus_recovery_value,2,removes recovery-value term,0.689652,0.006263,0.812993,0.018296,384
+minus_recovery_value,3,removes recovery-value term,0.687360,0.006318,0.811962,0.018395,384
+minus_recovery_value,4,removes recovery-value term,0.688638,0.006114,0.811392,0.018246,384
+minus_recovery_value,5,removes recovery-value term,0.688733,0.006398,0.811752,0.018544,384
+minus_recovery_value,6,removes recovery-value term,0.687430,0.006131,0.811985,0.018279,384
+minus_recovery_value,7,removes recovery-value term,0.690625,0.006194,0.813200,0.018288,384
+minus_recovery_value,8,removes recovery-value term,0.689540,0.006256,0.814251,0.018223,384
+minus_recovery_value,9,removes recovery-value term,0.689345,0.006281,0.812202,0.018385,384

@@ -1,8 +1,11 @@
-ablation,interpretation,mean_mean_success_rate,ci95_mean_success_rate,groups
-full_intervention_violation_revision,all components,0.728877,0.003167,7
-minus_cost_aware_querying,does not price interventions,0.663897,0.003274,7
-minus_causal_consistency_check,removes causal consistency check,0.654845,0.005932,7
-minus_recovery_memory,does not reuse intervention outcomes,0.647280,0.007246,7
-minus_intervention_gate,updates without intervention gate,0.630332,0.007835,7
-minus_violation_classifier,removes physical-violation classifier,0.623801,0.006268,7
-uncertainty_only_trigger,uses uncertainty without violation evidence,0.577050,0.004967,7
+ablation,description,success,ci95_success,utility,ci95_utility,n
+full_causal_intervention_revision,all components,0.729292,0.001755,0.874965,0.005433,3840
+minus_belief_delta_memory,does not reuse confirmed physical revisions,0.686071,0.001986,0.808237,0.005812,3840
+minus_calibration_term,does not calibrate predicted revision risk,0.686169,0.001986,0.808237,0.005812,3840
+minus_counterfactual_consistency,removes counterfactual transition/recovery check,0.674672,0.002050,0.790443,0.005914,3840
+minus_fixed_risk_gate,removes fixed-risk acceptance screen,0.680167,0.002014,0.799340,0.005863,3840
+minus_intervention_gate,updates without intervention gate,0.657523,0.002146,0.763752,0.006067,3840
+minus_operator_guard,does not guard false or conflicting operators,0.677456,0.002035,0.794892,0.005889,3840
+minus_physical_violation_classifier,removes physical-violation classifier,0.665935,0.002095,0.777098,0.005991,3840
+minus_query_cost_model,does not price interventions,0.691876,0.001955,0.797134,0.005762,3840
+minus_recovery_value,removes recovery-value term,0.689054,0.001968,0.812686,0.005787,3840

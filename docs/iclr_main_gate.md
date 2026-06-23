@@ -2,27 +2,31 @@
 
 Paper: 120 robotic_belief_revision_under_intervention
 
-Previous v3 decision: KILL_ARCHIVE
+v5 gate verdict: STRONG_REVISE
 
-V4.1 gate verdict: STRONG_REVISE
+Local evidence digest:
 
-Evidence digest:
+- Proposed method: `causal_intervention_belief_revision_v5`.
+- Strongest non-oracle baseline: `proposed_intervention_violation_revision_v4_1`.
+- Hard success: proposed `0.739175` vs strongest baseline `0.667135`; margin `0.072040`, wins `10/10`.
+- Hard utility: proposed `0.907176` vs strongest baseline `0.554958`; margin `0.352219`, wins `10/10`.
+- False-revision delta: `-0.096660`.
+- Missed-violation delta: `-0.105869`.
+- Belief-consistency delta: `+0.128339`.
+- Recovery-success delta: `+0.121875`.
+- Causal-attribution-F1 delta: `+0.106198`.
+- Damage-rate delta: `-0.042723`.
+- Intervention-cost delta: `-0.048074`.
+- Revision-calibration-error delta: `-0.014953`.
+- Unsafe-revision delta: `-0.078804`.
+- Best ablation success gap: `0.037416`.
+- Best ablation utility gap: `0.077831`.
+- Stress endpoint success margin: `0.087832`.
+- Fixed-risk coverage/breach/gated success: `1.000000` / `0.000000` / `0.729172`.
+- Evidence coverage: 230,400 main cells, 38,400 ablation cells, 161,280 stress cells, 107,520 fixed-risk cells, and 24 failure cases.
 
-- Proposed success: `0.727 +/- 0.006`.
-- Strongest non-oracle baseline: `human_intervention_revision` at `0.624 +/- 0.005`.
-- Paired difference: `0.103 +/- 0.006`, wins `7/7`.
-- False-revision delta: `-0.095`.
-- Missed-violation delta: `-0.093`.
-- Belief-consistency delta: `+0.202`.
-- Recovery-success delta: `+0.157`.
-- Damage-rate delta: `-0.027`.
-- Intervention-cost delta: `-0.134`.
-- Best ablation gap: `0.065`.
-- Raw evidence coverage: `15,120` task/regime/split/method/seed rows.
-- Ablation coverage: `2,352` task/regime/seed rows.
-- Stress-sweep coverage: `210` method/stress/seed rows.
-- Failure cases: `8` documented intervention-gated belief-revision boundaries.
+Local gate result: pass.
 
-Gate result: all local gates pass.
+Scope gate result: fail.
 
-ICLR main ready: no. External validation and real robot or accepted high-fidelity simulator evidence are still missing.
+ICLR main ready: no. Real robot rollouts, accepted high-fidelity validation, released belief/world-model checkpoints, calibrated robot logs, videos, independent baselines, and a full manual related-work pass are still missing.
